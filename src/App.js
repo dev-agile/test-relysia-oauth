@@ -15,7 +15,7 @@ function App() {
         onError={(errorResp) => {
           console.log(errorResp);
         }}
-        customComponent={<div>Relysia OAuth</div>}
+        customComponent={<div>Relysia OAuth Login</div>}
       />
     </div>
   );
