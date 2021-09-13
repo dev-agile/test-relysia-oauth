@@ -39,6 +39,25 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="https://codepen.io/saurabh-dev15/pen/eYRRrBv.js"></script>
+    <script src="https://vigilant-thompson-70e7ab.netlify.app/AuthScript.js"></script>
+    <h1>Using CDN link</h1>
+    <button onclick="handleClick()">Relysia Login</button>
+    <script>
+        function handleClick() {
+            console.log('Clicked');
+            const onSuccess = (resp) => {
+                console.log(resp);
+                alert(resp.data.msg);
+            }
+
+            const onError = (resp) => {
+                console.log(resp)
+            }
+
+            const clientKey="7c9a952e-1bd1-4ac5-a0cc-ecfaeb9d09ed"
+            const clientSecret="NCMCWFHbNcdbcIASPCbACdAHFJAPIYNLaVTNYBJEEGRKaQGTIYQTUXNLeQATLG"
+            RelysiaOAuth(onSuccess, onError, clientKey, clientSecret);
+        }
+    </script>
   </body>
 </html>
