@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import AuthButton from 'relysia-sdk';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthButton
+        clientKey="7c9a952e-1bd1-4ac5-a0cc-ecfaeb9d09ed"
+        clientSecret="NCMCWFHbNcdbcIASPCbACdAHFJAPIYNLaVTNYBJEEGRKaQGTIYQTUXNLeQATLG"
+        // isSignedIn={loggedIn}
+        onSuccess={(resp) => {
+          console.log(resp);
+        }}
+        onError={(errorResp) => {
+          console.log(errorResp);
+        }}
+        customComponent={<div>Relysia OAuth</div>}
+      />
     </div>
   );
 }
